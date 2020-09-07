@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Draw App</title>
+    <link rel="shortcut icon" href="./assets/icons/icons8-drawing-process-96.png" type="image/x-icon">
+    <script src="lib/p5.js"></script>
+    <script src="lib/p5.dom.js"></script>
+
+    <script src="sketch.js"></script>
+
+    <!-- add extra scripts below -->
+    <script src="./helper_lib/canvasState.js"></script>
+    <script src="./helper_lib/statusBar.js"></script>
+    <script src="./helper_lib/mouseIconController.js"></script>
+
+    <script src="toolbox.js"></script>
+    <script src="colourPalette.js"></script>
+    <script src="helperFunctions.js"></script>
+    <script src="./helper_lib/stack.js"></script>
+    <script src="./helper_lib/custom_objects/createImage.js"></script>
+    <script src="./helper_lib/custom_objects/shapes.js"></script>
+    
+    <!-- Polygon clipping Algorithm Implementation for Shape Compose Tool -->
+    <script src="./lib/splay.js"></script>
+    <script src="./lib/polygon-clipping.esm.js"></script>
+    
+    <!-- Flood Fill Algorithm Implementation for Bucket Tool -->
+    <script src="./helper_lib/floood.js"></script>
+
+    <script src="./tools/freehandTool.js"></script>
+    <script src="./tools/lineToTool.js"></script>
+    <script src="./tools/sprayCanTool.js"></script>
+    <script src="./tools/mirrorDrawTool.js"></script>
+    <script src="./tools/textTool.js"></script>
+    <script src="./tools/imageTool.js"></script>
+    <script src="./tools/shapeTool.js"></script>
+    <script src="./tools/eraserTool.js"></script>
+    <script src="./tools/shapeComposeTool.js"></script>
+    <script src="./tools/bucketFillTool.js"></script>
+    <script src="./tools/penTool.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  	<div class="wrapper">
+      <div class="box header">The Drawing App
+        <button id="clearButton">Clear</button>
+        <button id="saveImageButton">Save Image</button>
+      </div>
+      <div class="box" id="sidebar"></div>
+      <div id="content"></div>
+      <div id="statusBar">Hello World!</div>
+      <div class="box colourPalette"></div>
+      <div class="box options"></div>
+      <div id="images"></div>
+	</div>
+  </body>
+</html>
