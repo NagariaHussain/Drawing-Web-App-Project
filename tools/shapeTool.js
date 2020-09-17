@@ -51,57 +51,59 @@ function ShapeTool() {
 
                 // Save current canvas state
                 loadPixels();
-            }
-            else {
+            } else {
                 updatePixels();
                 // Draw based on selected shape
                 switch (selectedShape) {
-                    case 'rectangle': {
-                        if (keyIsPressed && keyCode === 16) {
-                            // Draw square if shift key is pressed
-                            // Finding the side of square
-                            currentShape = Rectangle.Square(startMouseX, startMouseY, mouseX, mouseY);
-                        } else {
-                            // Otherwise draw rectangle
-                            currentShape = Rectangle.fromCoordinatePairs(startMouseX, startMouseY, mouseX, mouseY);
+                    case 'rectangle':
+                        {
+                            if (keyIsPressed && keyCode === 16) {
+                                // Draw square if shift key is pressed
+                                // Finding the side of square
+                                currentShape = Rectangle.Square(startMouseX, startMouseY, mouseX, mouseY);
+                            } else {
+                                // Otherwise draw rectangle
+                                currentShape = Rectangle.fromCoordinatePairs(startMouseX, startMouseY, mouseX, mouseY);
+                            }
+                            break;
                         }
-                        break;
-                    }
-                    case 'ellipse': {
-                        currentShape = Ellipse.fromCoordinatePairs(startMouseX, startMouseY, mouseX, mouseY);
-                        break;
-                    }
-                    case 'circle': {
-                        currentShape = Circle.fromCoordinatePairs(startMouseX, startMouseY, mouseX, mouseY);
-                        break;
-                    }
-                    case 'polygon': {
-                        currentShape = RegularPolygon.fromCoordinatePairs(startMouseX, startMouseY, mouseX, numOfSides);
-                        break;
-                    }
-                    case 'star': {
-                        currentShape = Star.fromCoordinatePairs(startMouseX, startMouseY, mouseX, numOfSides);
-                        break;
-                    }
+                    case 'ellipse':
+                        {
+                            currentShape = Ellipse.fromCoordinatePairs(startMouseX, startMouseY, mouseX, mouseY);
+                            break;
+                        }
+                    case 'circle':
+                        {
+                            currentShape = Circle.fromCoordinatePairs(startMouseX, startMouseY, mouseX, mouseY);
+                            break;
+                        }
+                    case 'polygon':
+                        {
+                            currentShape = RegularPolygon.fromCoordinatePairs(startMouseX, startMouseY, mouseX, numOfSides);
+                            break;
+                        }
+                    case 'star':
+                        {
+                            currentShape = Star.fromCoordinatePairs(startMouseX, startMouseY, mouseX, numOfSides);
+                            break;
+                        }
                     default:
                         break;
                 }
                 // Drawing the current shape
                 currentShape.draw();
             }
-        }
-        else if (isUserDrawing) {
+        } else if (isUserDrawing) {
             // User has completed drawing, reset the tool state
             loadPixels();
             resetState();
         }
     }
 
-    this.keyPressed = function () {
+    this.keyPressed = function() {
         if (keyCode === UP_ARROW_CODE) {
             numOfSides++;
-        }
-        else if (keyCode === DOWN_ARROW_CODE) {
+        } else if (keyCode === DOWN_ARROW_CODE) {
             if (numOfSides > 3) {
                 numOfSides--;
             }
@@ -113,7 +115,7 @@ function ShapeTool() {
         }
     }
 
-    this.draw = function () {
+    this.draw = function() {
         push();
         if (!switchFill.checked()) {
             noFill();
@@ -123,7 +125,7 @@ function ShapeTool() {
         pop();
     }
 
-    this.populateOptions = function () {
+    this.populateOptions = function() {
         let menuSpace = select(".options");
 
         // Button to toggle fill of shapes
@@ -143,7 +145,7 @@ function ShapeTool() {
 
     }
 
-    this.unselectTool = function () {
+    this.unselectTool = function() {
         select(".options").html("");
     }
 

@@ -30,7 +30,7 @@ function ImageTool() {
     this.name = 'InsertImageTool';
     this.currentImage = null;
 
-    this.populateOptions = function () {
+    this.populateOptions = function() {
         let menuSpace = select(".options");
 
         // Controllers
@@ -56,7 +56,7 @@ function ImageTool() {
         maintainPropotionCheckbox.parent(menuSpace);
     }
 
-    this.unselectTool = function () {
+    this.unselectTool = function() {
         if (this.currentImage) {
             handleFinishEdit();
             this.currentImage = null;
@@ -66,8 +66,8 @@ function ImageTool() {
     }
 
     // Handle mouse dragged event
-    this.mouseDragged = function () {
-        if (this.currentImage != null && 
+    this.mouseDragged = function() {
+        if (this.currentImage != null &&
             isMouseInsideImage(mouseX, mouseY, this.currentImage) &&
             mouseInsideCanvas(canvas)) {
             updatePixels();
@@ -89,7 +89,7 @@ function ImageTool() {
     }
 
     // Handle mouse released event
-    this.mouseReleased = function () {
+    this.mouseReleased = function() {
         updatePixels();
 
         if (mouseDragStarted) {
@@ -136,8 +136,7 @@ function ImageTool() {
             // Update status bar text
             statusBar.setTempText("Image file picked", 3000);
             handleImageFile(file.data);
-        }
-        else {
+        } else {
             // Update Status bar text
             statusBar.setText("Please choose an image file!");
         }
@@ -234,4 +233,3 @@ function ImageTool() {
     // Initializing the image tool
     initTool();
 }
-

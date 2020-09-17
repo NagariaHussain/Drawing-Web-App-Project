@@ -126,7 +126,7 @@ function TextTool() {
 
     // Methods
     // Handle key presses
-    this.keyPressed = function (kCode) {
+    this.keyPressed = function(kCode) {
         if (hasTypingStarted) {
             // Manage key types
             if (
@@ -140,37 +140,30 @@ function TextTool() {
 
                 // Don't draw the text from now!
                 return;
-            }
-            else if (kCode === LEFT_ARROW) {
+            } else if (kCode === LEFT_ARROW) {
                 // Move cursor left
                 if (!isStackEmpty(beforeStack)) {
                     pushToStack(afterStack, popStack(beforeStack));
                 }
-            }
-            else if (kCode === RIGHT_ARROW) {
+            } else if (kCode === RIGHT_ARROW) {
                 // Move cursor right
                 if (!isStackEmpty(afterStack)) {
                     pushToStack(beforeStack, popStack(afterStack));
                 }
-            }
-            else if (kCode === HOME_KEY_CODE) {
+            } else if (kCode === HOME_KEY_CODE) {
                 while (!isStackEmpty(afterStack)) {
                     pushToStack(beforeStack, popStack(afterStack));
                 }
-            }
-
-            else if (kCode === END_KEY_CODE) {
+            } else if (kCode === END_KEY_CODE) {
                 while (!isStackEmpty(beforeStack)) {
                     pushToStack(afterStack, popStack(beforeStack));
                 }
-            }
-            else if (kCode === BACKSPACE) {
+            } else if (kCode === BACKSPACE) {
                 // Remove one character from left of text
                 if (!isStackEmpty(beforeStack)) {
                     popStack(beforeStack);
                 }
-            }
-            else if (kCode === DELETE) {
+            } else if (kCode === DELETE) {
                 // Remove one character from right of text
                 if (!isStackEmpty(afterStack)) {
                     popStack(afterStack);
@@ -183,7 +176,7 @@ function TextTool() {
     }
 
     // Handle character key presses 
-    this.keyTyped = function (key) {
+    this.keyTyped = function(key) {
         if (hasTypingStarted) {
             // Push to text buffer
             pushToStack(beforeStack, key);
@@ -195,7 +188,7 @@ function TextTool() {
     }
 
     // Handle mouse clicks
-    this.mousePressed = function (mx, my) {
+    this.mousePressed = function(mx, my) {
         if (mouseInsideCanvas(canvas)) {
             // Turn on typing state
             if (!hasTypingStarted) {
@@ -219,14 +212,14 @@ function TextTool() {
     }
 
     // Handle unselect tool
-    this.unselectTool = function () {
+    this.unselectTool = function() {
         resetTypingState();
         clearTextBuffer();
         select(".options").html("");
     }
 
     // Handle tool initialization
-    this.populateOptions = function () {
+    this.populateOptions = function() {
         // Element to append control elements to
         let menuSpace = select(".options");
 

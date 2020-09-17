@@ -16,12 +16,14 @@ class Rectangle {
 
     // Get the coordinates of the vertices in GeoJSON format
     getVertices() {
-        return [[
-            [this.x, this.y],
-            [this.x + this.w, this.y],
-            [this.x + this.w, this.y + this.h],
-            [this.x, this.y + this.h]
-        ]];
+        return [
+            [
+                [this.x, this.y],
+                [this.x + this.w, this.y],
+                [this.x + this.w, this.y + this.h],
+                [this.x, this.y + this.h]
+            ]
+        ];
     }
 
     // Is the shape drawable
@@ -69,7 +71,9 @@ class Circle {
     // Get the coordinates of the vertices in GeoJSON format
     getVertices() {
         let angle = TWO_PI / 100;
-        const vertices = [[]];
+        const vertices = [
+            []
+        ];
         for (let a = 0; a < TWO_PI; a += angle) {
             let sx = this.x + cos(a) * this.r;
             let sy = this.y + sin(a) * this.r;
@@ -105,14 +109,16 @@ class Ellipse {
     // get the coordinates of the shape in GeoJSON Format
     getVertices() {
         let angle = TWO_PI / 100;
-        const vertices = [[]];
-        
+        const vertices = [
+            []
+        ];
+
         for (let a = 0; a < TWO_PI; a += angle) {
             let sx = this.x + cos(a) * this.w / 2;
             let sy = this.y + sin(a) * this.h / 2;
             vertices[0].push([sx, sy]);
         }
-        
+
         return vertices;
     }
 
@@ -153,7 +159,9 @@ class RegularPolygon {
 
     // Get the coordinates of the vertices in GeoJSON format
     getVertices() {
-        const vertices = [[]];
+        const vertices = [
+            []
+        ];
         let angle = TWO_PI / this.numSides;
         for (let a = 0; a < TWO_PI; a += angle) {
             let sx = this.x + cos(a) * this.radius;
@@ -200,7 +208,9 @@ class Star {
 
     // Get the coordinates of the vertices in GeoJSON format
     getVertices() {
-        const vertices = [[]];
+        const vertices = [
+            []
+        ];
         let angle = TWO_PI / this.npoints;
         let halfAngle = angle / 2.0;
 
@@ -219,4 +229,3 @@ class Star {
         return new Star(sx, sy, mx - sx, 70, n);
     }
 }
-
