@@ -1,5 +1,5 @@
 //  CONVERTED FROM TYPESCRIPT TO JS 
-//  BABELJS WAS USED FOR CONVERSION
+//  BABELJS WAS USED FOR TRANSPILING
 //  FLOOD FILL: https://pavelkukov.github.io/q-floodfill/
 //  Inspired by: https://www.codeproject.com/Articles/6017/QuickFill-An-Efficient-Flood-Fill-Algorithm
 
@@ -292,5 +292,8 @@ class FloodFill {
 
         return null;
     }
-
 }
+
+// ===================
+// End Of File
+// ===================
