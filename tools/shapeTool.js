@@ -173,6 +173,7 @@ function ShapeTool() {
                 // Drawing the current shape
                 // by calling the draw() method  
                 // of the current shape object
+                // If fill option is NOT checked
                 currentShape.draw();
             }
         }
@@ -225,6 +226,8 @@ function ShapeTool() {
         if (!switchFill.checked()) {
             // Remove any fill color
             noFill();
+        } else {
+            fill(fillColor);
         }
 
         // Draw the shape to the canvas

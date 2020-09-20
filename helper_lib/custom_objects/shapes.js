@@ -173,7 +173,7 @@ class Ellipse {
     isValid() {
         // Both width and height 
         // must be greater than 0
-        return (this.w > 0 && this.h > 0);
+        return (this.w > 0 || this.h > 0);
     }
 
     // Returns an instance of Ellipse class
