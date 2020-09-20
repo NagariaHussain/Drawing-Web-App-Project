@@ -1,5 +1,7 @@
 /* -------- 
 CONSTRUCTOR FUNCTION FOR SHAPE TOOL
+Use: Let's the user draw a variety 
+of either filled or unfilled regular shapes.
 --------- */
 
 // NOTE:
