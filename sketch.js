@@ -7,6 +7,7 @@
 var toolbox = null;
 var colourP = null;
 var helpers = null;
+
 // To store canvas element
 var canvas;
 // To store the current canvasState Object
