@@ -1,3 +1,6 @@
+  // This file contains code that adds the feature to 
+  // save and load canvas data
+  
   // Save canvas state as JSON on save click 
   document.getElementById("saveCanvasButton").addEventListener('click', () => {
     // Download function
