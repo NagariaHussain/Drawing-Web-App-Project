@@ -43,6 +43,9 @@ function BucketFillTool() {
             // floodFill object's imageData property 
             // holds the pixel data
             context.putImageData(floodFill.imageData, 0, 0);
+
+            // Update the status bar text
+            statusBar.setTempText("Fill complete.", 5000);
         }
     };
 
